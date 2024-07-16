@@ -18,7 +18,7 @@ int main(int ac, char **av)
 {
     int i;
     int j;
-    char printed[255];
+    char printed[256];
 
     printed[0] = '\0';
     if (ac != 3)
