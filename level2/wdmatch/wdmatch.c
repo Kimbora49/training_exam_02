@@ -13,7 +13,7 @@ int ft_strlen(char *str)
 int main(int ac, char **av)
 {
     int i;
-    int compteur;
+    int j;
 
     if (ac != 3)
     {
@@ -21,19 +21,17 @@ int main(int ac, char **av)
         return (0);
     }
     i = 0;
-    compteur = 0;
-    while (av[1][i])
+    j = 0;
+    while (av[1][i] && av[2][j])
     {
-        while (*av[2] && *av[2] != av[1][i])
-            av[2]++;
-        if (*av[2] != '\0')
-            compteur++;
-        i++;
+        if(av[1][i] == av[2][j])
+            i++;
+        j++;
     }
-    if (compteur >= ft_strlen(av[1]))
+    if (av[1][i] == '\0')
     {
         i = 0;
-        while (av[1][i])
+        while(av[1][i])
         {
             write(1, &av[1][i], 1);
             i++;
